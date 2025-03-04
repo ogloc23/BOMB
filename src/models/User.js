@@ -20,9 +20,18 @@ const UserSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  balance: { 
+    type: Number, 
+    default: 0 
+  },
   password: {
     type: String,
     required: true,
+  },
+  role: {
+    type: String,
+    enum: ["USER", "ADMIN"],
+    default: "USER",
   },
   resetPasswordToken: {
     type: String,

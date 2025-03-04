@@ -1,2 +1,5 @@
 .env
 node_modules
+seedAdmin.js
+bettingCurrency.js
+BettingCurrency.js

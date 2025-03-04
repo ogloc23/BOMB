@@ -2,8 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { ApolloServer } from "apollo-server-express";
-import { typeDefs } from "./src/graphql/schemas.js";
-import { resolvers } from "./src/graphql/resolvers.js";
+import { typeDefs } from "./src/graphql/merge.js";
+import { resolvers } from "./src/graphql/merge.js";
 import jwt from "jsonwebtoken";
 import User from "./src/models/User.js";
 
