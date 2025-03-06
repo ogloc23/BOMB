@@ -23,6 +23,32 @@ export const balanceResolvers = {
 
       await targetUser.save();
       return targetUser;
-    }
+    },
+
+    updateUserDeposit: async (_, { userId, amount }, { user }) => {
+      if (!user || user.role !== "ADMIN") {
+        throw new Error("Unauthorized");
+      }
+
+      const targetUser = await User.findById(userId);
+      if (!targetUser) throw new Error("User not found");
+
+      targetUser.deposit += amount;
+      await targetUser.save();
+      return targetUser;
+    },
+
+    updateUserEarning: async (_, { userId, amount }, { user }) => {
+      if (!user || user.role !== "ADMIN") {
+        throw new Error("Unauthorized");
+      }
+
+      const targetUser = await User.findById(userId);
+      if (!targetUser) throw new Error("User not found");
+
+      targetUser.earning += amount;
+      await targetUser.save();
+      return targetUser;
+    },
   }
 };

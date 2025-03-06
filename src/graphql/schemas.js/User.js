@@ -10,6 +10,8 @@ export const userTypeDefs = gql`
     userName: String!
     email: String!
     balance: Float!
+    deposit: Float!
+    earning: Float!
     role: String!  # ✅ Role can be "USER" or "ADMIN"
     createdAt: DateTime!
     updatedAt: DateTime!
